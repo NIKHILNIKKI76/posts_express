@@ -1,0 +1,28 @@
+<!-- 
+index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Posts</h1>
+    <% posts.forEach(function(post) { %>
+        <div class="post">
+            <h3 class="user">@<%= post.userName %></h3>
+            <h4 class="content"><%= post.content %></h4>
+            <a href="/posts/<%=post.id%>" id="detailLink">See in detail</a> <br>
+            <a href="/posts/<%=post.id%>/edit" id="editLink">Edit Post content</a><br>
+            <a href="/posts/<%=post.id%>/delete" >delete</a>
+        </div>
+    <% }); %>
+
+    <a href="/posts/new" id="createNewPost">
+        <button>Add New Post</button>
+    </a>
+</body>
+</html>

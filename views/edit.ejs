@@ -1,0 +1,31 @@
+<!-- edi.ejs -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <link rel="stylesheet" href="/style.css"> <!-- Include your styles if needed -->
+</head>
+
+<body>
+    <h1>Edit Post</h1>
+    <form method="POST" action="/posts/<%=post.id%>?_method=PATCH">
+
+        <label for="postId">Post ID:</label><br>
+        <input type="text" id="postId" name="id" value="<%= post.id %>" readonly>
+        <br><br>
+        <label for="userName">User Name:</label><br>
+        <input type="text" id="userName" name="userName" value="<%= post.userName %>" readonly>
+        <br><br>
+        <label for="postContent">Edit Content:</label><br>
+        <textarea id="postContent" name="content" rows="4" cols="50"><%= post.content %></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
